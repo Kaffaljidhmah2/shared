@@ -10,6 +10,16 @@
 
 ---
 
+# Outline:
+
+- 线性性、Leibniz法则
+- 基函数、展开式
+- 对称性
+- 矩阵表示、Newton多项式
+- 中值定理
+
+---
+
 <b>Definition</b>: 设$\left\{x_k\right\} \subset \mathbb{R}$是一列互不相同的点，$f$在$\left\{x_k\right\}$有定义，记$D[x_1,x_2,\cdots,x_k](f)$为$f$关于$x_1, x_2, \cdots, x_k$的<b>divided difference</b>. 其递归定义如下：
 
 $$D[x_i](f):=f(x_i)$$
@@ -147,7 +157,7 @@ D[x_1](f) &  D[x_1,x_2](f)&  \cdots & D[x_1,\cdots,x_n](f) \\
  - Leibniz法则: $T_{fg}=T_fT_g$
  - 两两交换：$T_fT_g=T_gT_f$
  
-<!--Note：  只看第1行最后一列 -->
+<!--Note： Leibniz法则 只看第1行最后一列 -->
 
 
 ---
@@ -209,6 +219,36 @@ Note : 这一族矩阵可以联合对角化
 
 放到一起看一看：
 
+$$T_fv_i=f(x_i)v_i$$
+
+<font size="4pt">
+
+$$\left(
+\begin{matrix}
+D[x_1](f) &  D[x_1,x_2](f)&  \cdots & D[x_1,\cdots,x_n](f) \\
+0 & D[x_2](f) & \cdots & D[x_2, \cdots , x_n] (f) \\ \\
+\vdots & \vdots & \ddots & \vdots &  \\ 
+0 & 0 & 0 & D[x_n](f)
+\end{matrix}
+\right) \left(
+\begin{matrix}
+\frac{1}{(x_i-x_1)(x_i-x_2)\cdots(x_i-x_{i-1}) } \\ 
+\frac{1}{(x_i-x_2)\cdots(x_i-x_{i-1}) } \\ 
+\vdots \\ 
+\frac{1}{x_i-x_{i-1}} \\ 
+1 \\
+0 \\
+\vdots \\
+ 0
+\end{matrix}
+\right)$$
+
+</font>
+
+看第一行：
+
+$$D[x_1](f)+(x_i-x_1)D[x_1,x_2](f)+\cdots$$
+$$+(x_i-x_1)\cdots(x_i-x_{i-1})D[x_1,\cdots,x_i](f)=f(x_i)$$
 
 ---
 
