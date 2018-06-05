@@ -22,11 +22,11 @@
 
 <b>Definition</b>: 设$\left\{x_k\right\} \subset \mathbb{R}$是一列互不相同的点，$f$在$\left\{x_k\right\}$有定义，记$D[x_1,x_2,\cdots,x_k](f)$为$f$关于$x_1, x_2, \cdots, x_k$的<b>divided difference</b>. 其递归定义如下：
 
-$$D[x_i](f):=f(x_i)$$
+$$D[x_i](f)=f(x_i)$$
 
-$$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f):=$$
+$$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f)$$
 
-$$\dfrac{D[x_{i_2},x_{i_3}, \cdots, x_{i_k}](f)-D[x_{i_1},x_{i_2}, \cdots, x_{i_{k-1}}](f)}{x_{i_k}-x_{i_1}}$$
+$$=\dfrac{D[x_{i_2},x_{i_3}, \cdots, x_{i_k}](f)-D[x_{i_1},x_{i_2}, \cdots, x_{i_{k-1}}](f)}{x_{i_k}-x_{i_1}}$$
 
 ---
 
@@ -37,7 +37,7 @@ $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f)+D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](g)$
 
 $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](\lambda f)=\lambda D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f)$$
 
-Hint: By definition and deduction.
+Hint: 根据定义归纳即得。
 
 ---
 
@@ -55,7 +55,7 @@ $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f)=\sum_{j=1}^k f(x_{i_j})D[x_{i_1},x_{i_2
 
 ---
 
-<b>Theorem: </b>  对任意k，对于任意不同的$i_1,i_2,\cdots,i_k$, 对任意$1 \leq j \leq k$, 下述等式成立：
+<b>Theorem: </b>  对任意$k$和任意互不相同的$i_1,i_2,\cdots,i_k$, 对任意$1 \leq j \leq k$, 下述等式成立：
 
 $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](\delta_{i_j}(x))=\prod_{l=1, l \ne j}^k\frac{1}{x_{i_j}-x_{i_l}}$$ 
 
@@ -63,12 +63,12 @@ $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](\delta_{i_j}(x))=\prod_{l=1, l \ne j}^k\fr
 
 # **Proof* #
 
-用归纳法，k=1时无需证明。假设命题对$1,2,\cdots,k-1$成立，下证明其对k成立。
+用归纳法，$k=1$时无需证明。假设命题对$1,2,\cdots,k-1$成立，下证明其对$k$成立。
 
 由定义有，
 
-$$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](\delta_{i_j}(x)):=$$
-$$\frac{D[x_{i_2},x_{i_3}, \cdots, x_{i_k}](\delta_{i_j}(x))-D[x_{i_1},x_{i_2}, \cdots, x_{i_{k-1}}](\delta_{i_j}(x))}{x_{i_k}-x_{i_1}}$$
+$$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](\delta_{i_j}(x))$$
+$$=\frac{D[x_{i_2},x_{i_3}, \cdots, x_{i_k}](\delta_{i_j}(x))-D[x_{i_1},x_{i_2}, \cdots, x_{i_{k-1}}](\delta_{i_j}(x))}{x_{i_k}-x_{i_1}}$$
 
 ---
 
@@ -97,9 +97,9 @@ $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](\delta_{i_1}(x))=\frac{0-\prod_{l=2}^{k-1}
 当$1 < j < k$ 时，有：
 
 
-$$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](\delta_{i_j}(x))=\frac{\frac{1}{\prod_{l=2, l \ne j}^k x_{i_j}-x_{i_l} } - \frac{1}{\prod_{l=1, l\ne j}^{k-1}x_{i_j}-x_{i_l} }}{x_{i_k}-x_{i_1}}$$
+$$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](\delta_{i_j}(x))=\frac{\frac{1}{\prod_{l=2, l \ne j}^k (x_{i_j}-x_{i_l}) } - \frac{1}{\prod_{l=1, l\ne j}^{k-1} (x_{i_j}-x_{i_l}) }}{x_{i_k}-x_{i_1}}$$
 
-$$=\frac{\frac{(x_{i_j}-x_{i_1})-(x_{i_j}-x_{i_k})}{\prod_{l=1, l \ne j}^k x_{i_j}-x_{i_l} }  } {x_{i_k}-x_{i_1}}$$
+$$=\frac{\frac{(x_{i_j}-x_{i_1})-(x_{i_j}-x_{i_k})}{\prod_{l=1, l \ne j}^k (x_{i_j}-x_{i_l}) }  } {x_{i_k}-x_{i_1}}$$
 
 $$=\prod_{l=1, l \ne j}^k\frac{1}{x_{i_j}-x_{i_l}} $$
 
@@ -120,7 +120,7 @@ $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](\delta_{i_j}(x))=\prod_{l=1, l \ne j}^k\fr
 
 ---
 
-<b>Theorem: (Leibinz rule):</b>
+<b>Theorem: (Leibniz rule):</b>
 
 $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](fg)=D[x_{i_1}](f)D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](g)$$
 
@@ -134,7 +134,7 @@ $$+D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f)D[x_{i_k}](g)$$
 
 # **Proof* #
 
-证明思路：利用线性性，只需证明对$f=\delta_{i_l}$ 和$g=\delta_{i_r}$即可。然后按$l>r$,$l=r$,$l<r$分类讨论。前面两种情况的证明是平凡的。第三种情况（？）
+证明思路：利用线性性，只需证明对$f=\delta_{i_l}$ 和$g=\delta_{i_r}$结论成立。然后按$l>r$,$l=r$,$l<r$分类讨论。前面两种情况的证明是平凡的。第三种情况（？）
 
 ---
 
@@ -252,7 +252,7 @@ $$+(x_i-x_1)\cdots(x_i-x_{i-1})D[x_1,\cdots,x_i](f)=f(x_i)$$
 
 ---
 
-<b>Mean Value Theorem:</b> 设$f(x)$ k-1次可微，则$\exists \xi \in (a,b)$ ,$a=\min(x_{i_1},\cdots,x_{i_k})$,$b=\max(x_{i_1},\cdots,x_{i_k})$,使得
+<b>Mean Value Theorem:</b> 设$f(x)$ $k-1$次可微，则存在$\xi \in (a,b)$ ,$a=\min(x_{i_1},\cdots,x_{i_k})$,$b=\max(x_{i_1},\cdots,x_{i_k})$,使得
 
  $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f)=\dfrac{f^{(k-1)}(\xi)}{(k-1)!}$$
  
@@ -260,7 +260,7 @@ $$+(x_i-x_1)\cdots(x_i-x_{i-1})D[x_1,\cdots,x_i](f)=f(x_i)$$
 
 # **Proof* #
 
-考虑$g(x)$为$f(x)$在这k个点处的Newton插值多项式，$g(x)$的k-1阶导数的为$(k-1)!D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f)$.
+考虑$g(x)$为$f(x)$在这k个点处的Newton插值多项式，$g(x)$的$k-1$阶导数的为$(k-1)!D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f)$.
 
 考虑$f-g$，可知其(k-1)次可微，在$[a,b]$内有k个零点，反复利用Rolle 中值定理可知$\exists \xi \in (a,b)$满足：
 
