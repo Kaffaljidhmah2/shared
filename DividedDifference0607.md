@@ -270,3 +270,11 @@ $$f^{(k-1)}(\xi)-g^{(k-1)}(\xi)=0$$
 
 $$D[x_{i_1},x_{i_2}, \cdots, x_{i_k}](f)=\dfrac{f^{(k-1)}(\xi)}{(k-1)!}$$
 
+---
+
+# Reference:
+&nbsp;&nbsp;&nbsp;&nbsp;wikipedia
+
+# Acknowledgement: 
+
+&nbsp;&nbsp;&nbsp;&nbsp;感谢蔡天乐同学校对
